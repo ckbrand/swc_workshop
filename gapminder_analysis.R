@@ -1,7 +1,7 @@
 # Notes from Software Carpentry Workshop
 # Date: January 17-18, 2017
 # Author: Colleen K. Brand
-
+# Purpose: This file runs an analysis on the gapminder data
 library("ggplot2")
 # Read in data file
 download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder-FiveYearData.csv", destfile = "gapminder-FiveYearData.csv")
