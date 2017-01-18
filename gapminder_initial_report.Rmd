@@ -28,4 +28,12 @@ facet_grid(.~continent)
 calcGDP(gapminder, country="China")
 head(calcGDP(gapminder, year=2002))
 calcGDP(gapminder, country="China", year=2002)
+newdata <- calcGDP(gapminder)
 ```
+
+```{r facetGDP, echo=FALSE, fig.height=3.0, fig.width= 12, fig.path="figure/"}
+ggplot(data = newdata, aes(x = year, y = gdp, color = continent)) + geom_point() +
+facet_grid(.~continent) + 
+  theme(axis.text.x = element_text(angle = 30))
+```
+
