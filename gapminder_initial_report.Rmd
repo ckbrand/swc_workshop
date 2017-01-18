@@ -8,10 +8,10 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
+source("code/gapminder_utilities.R")
 ```
 
 This is an initial report describing changes in life expectancy over the past 60 years as it relates to GDP, country and continent. The data were taken from gapminder dataset. 
-
 
 ```{r load_data, echo=FALSE}
 gapminder <- read.csv("data/gapminder-FiveYearData.csv")
@@ -22,4 +22,10 @@ The gapminder dataset contains `r ncol(gapminder)` variables from `r nrow(gapmin
 ```{r facet_plot, echo=FALSE, fig.height=3.0, fig.path="figure/"}
 ggplot(data = gapminder, aes(x = year, y = lifeExp, color = continent)) + geom_point() +
 facet_grid(.~continent)
+```
+
+```{r gdp}
+calcGDP(gapminder, country="China")
+head(calcGDP(gapminder, year=2002))
+calcGDP(gapminder, country="China", year=2002)
 ```
