@@ -14,12 +14,12 @@ This is an initial report describing changes in life expectancy over the past 60
 
 
 ```{r load_data, echo=FALSE}
-gapminder <- read.csv("gapminder-FiveYearData.csv")
+gapminder <- read.csv("data/gapminder-FiveYearData.csv")
 ```
 
-The gapminder dataset contains `r ncol(gapminder)` variables from `r nrow(gapminder)` observations. It's clear that civil wars and HIV/AIDS have had a major impact on life expectance in Africa.
+The gapminder dataset contains `r ncol(gapminder)` variables from `r nrow(gapminder)` observations. It's clear that civil wars and HIV/AIDS have had a major impact on life expectancy in Africa.
 
-```{r facet_plot, echo=FALSE, fig.height=3.0}
+```{r facet_plot, echo=FALSE, fig.height=3.0, fig.path="figure/"}
 ggplot(data = gapminder, aes(x = year, y = lifeExp, color = continent)) + geom_point() +
 facet_grid(.~continent)
 ```
